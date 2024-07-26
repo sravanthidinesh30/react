@@ -1,0 +1,11 @@
+#heading{
+    color: darkgoldenrod;
+}
+#parent{
+    background-color: coral;
+    color: crimson;
+}
+#child2{
+    color: darkorange;
+    background-color: cadetblue;
+}
