@@ -1,11 +1,22 @@
-#heading{
-    color: darkgoldenrod;
-}
-#parent{
-    background-color: coral;
-    color: crimson;
-}
-#child2{
-    color: darkorange;
-    background-color: cadetblue;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.res-card{
+    padding: 5px;
+    width: 250px;
+    margin-top: 10px;
+    margin: 10px;
+    transition: transform .1s;
+    
+    }
+    .res-card:hover{
+    cursor: pointer;
+    border: 1px solid black;
+    transform: scale(1.05);
+    }
+    .res-img{
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    }
+    

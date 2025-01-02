@@ -1,0 +1,266 @@
+CDN LINKS is not prefererd way to bring react and reactdom 
+
+//reactelement(object)=Html(browser understands)
+//const parent=React.createElement("div",{id:"parent"},
+ //  [
+  //  React.createElement("div",{id:"child"},
+  //      [
+     //       React.createElement("h1",{},"iam a heading"),
+      //      React.createElement("h2",{},"iam h2 heading")
+      //  ]),
+  //      React.createElement("div",{id:"child2"},
+         //   [
+        //        React.createElement("h1",{},"iam a heading"),
+          //      React.createElement("h2",{},"iam h2 heading")
+            //]
+           // )
+   //]);
+
+    // console.log(parent);
+
+
+//root.render(parent);
+//================
+//const heading=React.createElement("h1",{id:"heading"},"hello world");
+//const root=ReactDOM.createRoot(document.getElementById("root"));
+//root.render(heading);
+
+
+add it git hub: then
+==>parcel is a dependencies
+Dependency;two type of packages(dependcies)
+DEV depencdency: it is generally required for in development app
+normal depencies: for production app
+
+**npm init**
+then full details:
+|
+|package.json is creates
+=>package.json:it's a configuration of npm it keep track of original of package it installed versions.
+**npm install -D parcel**(fetching parcel means )
+: package lock.json: keep a track of exact version of all the trasitive and dependecies
+==>caret (^)it will help you  automatically update new version (minor upgrades)
+=====> if you want exact version you can take out caret(^) in parcel
+==>tilda (~) it will automatically updated major version(its some danger)
+
+=> when we instal npm parcel:fetching all the details putting in these nodemodules(all the details dependecies or code into our system ) is like database it contains actual data
+
+==>node modulaes is collection of dependecies it is very huge and actual code.
+***if you have package and package-lock.json we can recreate nodemodules even it it nodemodules(npm install) is deleted because exactversion of package-lock.json is there**
+
+==> **gitignore** it contains all detailed which is unwanted.
+===================================================
+
+ **npx parcel index.html** this is hosted app on server(it gives port )
+ ===>npx means executing a package
+
+ ==> npm install react(normal dependencies)
+ ==> npm install react-dom
+ to start use npx parcel start**
+ ==> import react to html file
+ ****************************************
+   to build production appilcation using zero
+      ==> npx parcel build index.html
+it will get error because we have main in package.json
+=> remove the main:app.js 
+**npm run start** to start & npm start
+**npm run build** to build
+
+JSX is not html inJS
+**jsx is html like syntax or XML like syntax**
+==>JSX is just syntax and reactElement is an js object
+==>jsx transpiled before it reaches the JS engine is done by parcel(manager)-Babel
+==> jsx=> Baabel transpiles it to React.createElemnt=. then go to ReactElememt=>js object
+==> JSX =>React.createElement=.ReactElement.Jsx=>htmlElement(rendered)
+==>attribtes are different from html we use camelcasse in jsx
+==> when we write in multiple lines we should use'()'
+
+  ***React component**
+ ==> in previous days everything in react is component  
+ ==>components are the building blocks of react application.they are the usable code blocks containing logics and ui elements
+ ==>
+ **class based components(old)
+
+ **functional components(new):its a just noraml js function 
+
+ ///component composition is component inside the component is called component position
+ const Heading2 = ()=>(
+  <h1>hello namastae</h1>
+);
+const Heading = ()=>(
+    <div id="container">
+          <Heading2 />
+          <h1>hello react from funtional component</h1>
+    </div>
+  
+);
+root.render(<Heading/>);
+===> we can inject any js code inside of jsx by usig curly brace{}
+=> we can write sny element in component and componet in component and also any component on element
+==>we can write funtion inside jsx in parenthesis 
+{Heading2()}  
+=====================================================
+          ***food ordering app***
+==> for the cards entering dynamic code by using props in thecard =>props.resName
+
+      <div className="food-container">
+    < Foodcards resName="Meghana foods" cuisine="biryani-North Indian "/>
+    < Foodcards resName="Bawarchi" cuisine="Mandi"/>
+    < Foodcards resName="BBQ" cuisine="Fast food"/>
+    < Foodcards resName="bakery" cuisine="cake"/>
+    < Foodcards resName="avakay" cuisine="Meals"/>
+   
+  </div>     
+==> to get in dynamic card we can create a objet entering the list int by using array.
+==> by using reuable componets we can pass it dynamic propsor data 
+==> we can loop  over an array and create the restrocards dynamically
+===we use map funtion for the map methoda(we can use for loop)
+==> we should use unique key(id) map() =>when components have same level there should have id to every card(it will render only one card)
+==> if there is no id then when we add new card then it will all rerender thenall cards
+note **we should not use indexes as key in react it may change the list, we can use but it is not recommended**
+**map()**
+  < Foodcards resData={resList[0]} />
+    < Foodcards resData={resList[1]} />
+    < Foodcards resData={resList[2]} />
+    < Foodcards resData={resList[3]} />
+    < Foodcards resData={resList[4]} />
+
+===========================================
+          ***food ordering app***
+src and components are the folders which we save all the files in react js
+=> we can  save with header.jsx or .js and also importing with or without extension
+**imp**
+ --->never ever keep hard coded data in components
+ ---> all components files should be sggtart with capital Letter
+ ---> contants mean hard coded data so it should be in small letters
+ ******************
+ => keep all the icons and links or images in separate files(utitlity means all over or common files or config)
+  *****TWO TYPES OF EXPORT/IMPORT***
+
+  - Default Export/Import
+  exort default Component;
+  import Componenrt from  "Path";
+
+  - Named Export/Import
+  Export const "path";
+  import {Component} from "path";
+
+==============================================
+ in react 16 new alogorithm came 
+reacts uses somethimg known as
+# RECONCILAIATION ALOGORITHM(REACT FIBER) after react 18
+VIRTUAL DOM  is representation of actual dom.
+it filters the update version if there is 7 cards when we clicked then we updates and filters into 3 cards
+# DIFF ALOGRITHM
+it finds the diff between old virtual dom and new virtual dom , it will calcualtethe diff and it will the actuallay updated dom
+==============================================
+# conditional rendering :
+if you have condition and that render according to the condition
+https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/dh0qsuqritnmbncwrni3
+==================================
+find the path:
+## useEffect Hook:
+
+=>  useEffect(() => {
+    fetchData();
+  }, []);
+  in this useEffect is called after every render of that component
+  =>Dependency array changes the behavior of the render
+  ***if the dependency array is not there:
+  UseEffect effect is called on every render
+  ***ther is dependenct array[]:use effect is called on initial render and (just once)
+  ****if there is something(btnname) in dependency:
+  useEffect is called every time "btn is updated
+***react router***
+==> to instal react router [npm i react-router-dom]
+- it takes to other page  by creating routing configuration
+-- import the createBrowserRouter from react-router-dom
+- CBR takes a lists of OBJECTS
+- PATH
+- ELEMENT (which page(compopnent) we want)
+==> we should provide the configuration by
+- routerProvider is component
+*** there are many Routers in React Router in website
+- errorElement : we can load error component
+***useRouterError** to give more information by create err and call the useRoterError
+** react-dom gives OUTLET
+- outlet is a component ,whenever change in the path outlet it will be filled
+-it will repalce 
+============================
+****LINK*** to takes to other page or redirects the page
+** import LINK from react-roter-dom
+**** if you use the LINK in the path it refreshes the components
+**** if you use ANCHOR TAG it reloads the page
+============
+## componentDidMount:
+it is used make an api call
+-it calls in accoring to the componentDidMount
+life cycle method when the multiple childrens are there
+- parent cons
+- parebt render
+- 1 child cons
+- 1 child render
+- 2 child cons
+- 2 child render
+- 1 componentDid amount
+- 2 component did amount
+- parent componentr did amount
+===============================
+***online status****
+ 
+* we should add event listeners once in while  
+* check the window of window.online event 
+===================
+**bundling***
+- chunking
+-  code splitiing
+- dynamic bundling
+- lazy loading
+- on demand loading
+- dynamic import
+*********style css*********
+- material ui is used for predefined tyles
+- chakra ui
+- bootstrap
+- ant design
+- tailwidndcss
+- post css is transforminh css aLLONG WITH JAVASCRIPT
+**** npx means invoking or executing 
+1)
+tailwind css-> get started ->feamework guides-> click on parcel-> then follow the instructions
+### HIGHER ORDER COMPONENTS ###
+hoc is function that takes component and returns the component, at the end it is normal js funtion(modifys the existing components and returns it)
+### redux toolkit###:
+ we have to mutate(modify) the state
+- install libraries
+- redux is a preictable state container foe javascript.
+
+- CART SLICE: when we click on add btn,
+->it dispatches the action 
+-> then it calls  the REDUCER  funtion 
+-> and then this function will actually(internally) modify the cart(slice of redux store)
+-> we read data by using SELECTOR(header component is subscribing to the REDUXE store using selector)
+-> then then cart will be updated
+- USER SLICE:
+- THEME SLICE: 
+
+- > reducer : it is big app it can many reducers
+- > reducers: it has multipeld reducer funtions lic add item, remove item, clear cart
+- > Vanilla redux(old): never modify(dont mutate)
+redux usses IMMER library: this finds the difference b/w original state and muttaed state and gives news state which is immutable state
+### types of testing####
+- unit testing: unit testing is the process of testing the smallest parts of code,like individual functions or methods, to make sure they work correctly.
+
+- Integration testing: testing is a software testing technique that focuses on verifying the interactions and data exchange between different components or modules of a software application
+
+- End to End Testing - e2e Testing  
+##### setting up testing in our app  ##
+- install React testing library : it uses {jest} this library is using JEST
+-npm i -D @testing-  library/react install this
+- install jest ; in to our applicaton  npm i-D jest
+- install babel dependencies
+- configure babel
+- configure parcel config file to disable babel transipilation
+- Jest -npx jest --init
+- jest configuration
+- install jsdom library
